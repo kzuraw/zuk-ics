@@ -1,0 +1,7 @@
+.dev.vars
+.DS_Store
+.wrangler/
+*.log
+coverage/
+dist/
+node_modules/

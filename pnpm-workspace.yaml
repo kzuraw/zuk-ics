@@ -1,0 +1,4 @@
+# Native binaries required by Wrangler and Cloudflare's Worker test runtime.
+allowBuilds:
+  esbuild: true
+  workerd: true

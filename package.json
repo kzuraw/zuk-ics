@@ -1,0 +1,28 @@
+{
+  "name": "zuk-ics",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.4.2",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev --test-scheduled",
+    "format": "prettier --write .",
+    "lint": "pnpm run \"/^lint:.*/\"",
+    "lint:prettier": "prettier --check .",
+    "lint:tsc": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "1.1.10",
+    "@types/node": "^24.13.5",
+    "prettier": "3.9.6",
+    "typescript": "7.0.2",
+    "vitest": "4.1.11",
+    "wrangler": "4.132.0"
+  }
+}
