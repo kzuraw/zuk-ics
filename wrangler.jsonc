@@ -1,30 +1,37 @@
 {
-  "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "zuk-ics",
-  "main": "src/index.ts",
-  "compatibility_date": "2026-09-18",
-  "compatibility_flags": ["nodejs_compat"],
-  "observability": {
-    "enabled": true,
-    "logs": {
-      "enabled": true,
-      "head_sampling_rate": 1,
-    },
-    "traces": {
-      "enabled": true,
-      "head_sampling_rate": 0.01,
-    },
-  },
-  "secrets": {
-    "required": ["CALENDAR_TOKEN", "ZUK_TOWN"],
-  },
-  "triggers": {
-    "crons": ["17 */6 * * *"],
-  },
-  "kv_namespaces": [
-    {
-      "binding": "CALENDAR_KV",
-      "id": "00000000000000000000000000000000",
-    },
-  ],
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "zuk-ics",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-09-18",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"observability": {
+		"enabled": true,
+		"logs": {
+			"enabled": true,
+			"head_sampling_rate": 1,
+		},
+		"traces": {
+			"enabled": true,
+			"head_sampling_rate": 0.01,
+		},
+	},
+	"secrets": {
+		"required": [
+			"CALENDAR_TOKEN",
+			"ZUK_TOWN"
+		],
+	},
+	"triggers": {
+		"crons": [
+			"17 */6 * * *"
+		],
+	},
+	"kv_namespaces": [
+		{
+			"binding": "CALENDAR_KV",
+			"id": "3b00e3cebbaa4d64917c6cc2e191dee5",
+		},
+	],
 }
