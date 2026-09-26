@@ -1,6 +1,6 @@
 # ZUK ICS
 
-A private Cloudflare Worker that converts ZUK Kiełczów water-outage RSS
+A self-hosted Cloudflare Worker that converts ZUK Kiełczów water-outage RSS
 notices for one town into an Apple Calendar subscription.
 
 The Worker refreshes the complete calendar every six hours, stores the last
@@ -89,13 +89,14 @@ Deployment is intentionally manual.
    pnpm wrangler whoami
    ```
 
-2. Create a dedicated production KV namespace:
+2. The production `CALENDAR_KV` namespace is already configured in
+   `wrangler.jsonc`. For a different Cloudflare account, create a namespace:
 
    ```sh
    pnpm wrangler kv namespace create CALENDAR_KV
    ```
 
-   Replace the placeholder namespace ID in `wrangler.jsonc` with the returned
+   Then replace the existing namespace ID in `wrangler.jsonc` with the returned
    ID.
 
 3. Add each production value as an encrypted Worker secret:
@@ -142,5 +143,14 @@ paths return 404. Responses support `ETag` revalidation and expose snapshot
 freshness through `Last-Modified`, `X-Calendar-Last-Updated`,
 `X-Calendar-Event-Count`, and `X-ZUK-Raw-Item-Count` headers.
 
-The source feed is:
-<https://zuk-kielczow.pl/index.php/wodociagi/awarie-i-wylaczenia-wody?format=feed&type=rss>.
+## Acknowledgements
+
+Water-outage data comes from the public
+[ZUK Kiełczów RSS feed](https://zuk-kielczow.pl/index.php/wodociagi/awarie-i-wylaczenia-wody?format=feed&type=rss).
+
+This is an unofficial project. It is not affiliated with or endorsed by ZUK
+Kiełczów. The upstream feed format may change without notice.
+
+## License
+
+This project is available under the [MIT License](LICENSE).
