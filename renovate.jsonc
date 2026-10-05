@@ -7,6 +7,13 @@
   "automerge": true,
   "automergeType": "pr",
   "platformAutomerge": false,
+  "packageRules": [
+    {
+      "description": "Keep Vitest within the range supported by @cloudflare/vitest-plugin; revisit when the plugin supports Vitest 5.",
+      "matchPackageNames": ["vitest"],
+      "allowedVersions": "^4.1.0",
+    },
+  ],
   "lockFileMaintenance": {
     "enabled": true,
     "groupName": "all dependencies",
